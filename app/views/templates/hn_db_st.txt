@@ -1,0 +1,10 @@
+posts =>
+
+* title
+* url
+* upvotes
+
+comments =>
+
+* post_id
+* text
