@@ -5,13 +5,10 @@ hnApp.config ($httpProvider) ->
   authToken = $("meta[name=\"csrf-token\"]").attr("content")
   $httpProvider.defaults.headers.common["X-CSRF-TOKEN"] = authToken
 
-# configure our location provider to be in HTML5 mode (remove # from URL)
-@hnApp.config ($locationProvider) ->
-  $locationProvider.html5Mode true
-
 # AngularJS Routes
-@hnApp.config ($routeProvider) ->
-  # $locationProvider.html5Mode true
+@hnApp.config ($routeProvider, $locationProvider) ->
+  # configure our location provider to be in HTML5 mode (remove # from URL)
+  $locationProvider.html5Mode true
   $routeProvider
     .when('/', {
         templateUrl: '/templates/dashboard.html',
@@ -40,4 +37,4 @@ hnApp.config ($httpProvider) ->
     .otherwise({
       templateUrl: '/templates/dashboard.html',
       controller: 'DashboardCtrl'
-    })
+      })
