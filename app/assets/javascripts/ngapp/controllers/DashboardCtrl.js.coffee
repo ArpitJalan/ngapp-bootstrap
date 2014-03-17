@@ -1,2 +1,0 @@
-@hnApp.controller 'DashboardCtrl', ($scope) ->
-
