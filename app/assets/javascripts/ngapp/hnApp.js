@@ -13,34 +13,34 @@ hnApp.config(function($httpProvider) {
 
 // Routes
 hnApp.config(function ($routeProvider, $locationProvider) {
-    $locationProvider.html5Mode(true);
-    $routeProvider
-      .when('/', {
-          templateUrl: '/templates/dashboard.html',
-          controller: 'DashboardCtrl'
-        })
-      .when('/new', {
-          templateUrl: '/templates/test.html',
-          controller: 'DashboardCtrl'
-        })
-      .when('/submit', {
-          templateUrl: '/templates/submit_posts.html',
-          controller: 'PostsCtrl'
-        })
-      .when('/modify', {
-          templateUrl: '/templates/test.html',
-          controller: 'DashboardCtrl'
-        })
-      .when('/posts', {
-          templateUrl: '/templates/test.html',
-          controller: 'DashboardCtrl'
-        })
-      .when('/comments', {
-          templateUrl: '/templates/test.html',
-          controller: 'DashboardCtrl'
-        })
-      .otherwise({
+  $locationProvider.html5Mode(true);
+  $routeProvider
+    .when('/', {
         templateUrl: '/templates/dashboard.html',
         controller: 'DashboardCtrl'
-        });
-  });
+      })
+    .when('/new', {
+        templateUrl: '/templates/test.html',
+        controller: 'DashboardCtrl'
+      })
+    .when('/submit', {
+        templateUrl: '/templates/submit_posts.html',
+        controller: 'PostsCtrl'
+      })
+    .when('/modify', {
+        templateUrl: '/templates/test.html',
+        controller: 'DashboardCtrl'
+      })
+    .when('/posts', {
+        templateUrl: '/templates/test.html',
+        controller: 'DashboardCtrl'
+      })
+    .when('/comments', {
+        templateUrl: '/templates/test.html',
+        controller: 'DashboardCtrl'
+      })
+    .otherwise({
+      templateUrl: '/templates/dashboard.html',
+      controller: 'DashboardCtrl'
+      });
+});

@@ -1,4 +1,4 @@
-this.hnApp.controller('PostsCtrl', function($scope, $modalInstance) {
+hnApp.controller('PostsCtrl', function($scope, $modalInstance, Post) {
   $scope.posts = [];
   $scope.post = {
     url: "http://",
