@@ -17,5 +17,7 @@
 //= require angularjs/angular-resource.min
 //= require angularjs/angular-route.min
 //= require ui-bootstrap-tpls-0.10.0.min
+//  require angular-strap/angular-strap.min.js
+//  require angular-strap/angular-strap.tpl.min.js
 //= require ngapp/hnApp
 //= require_tree .

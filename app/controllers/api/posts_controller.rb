@@ -1,39 +1,39 @@
 class Api::PostsController < Api::BaseController
-  before_action :check_owner
+  before_action :check_owner, only: [:show, :update, :destroy]
 
   def index
-    render json: post_list.posts
+    render json: current_user.posts
+  end
+
+  def show
+    render json: post
   end
 
   def create
-    post = post_list.posts.create!(safe_params)
-    render json: post, status: 201
+    post = current_user.posts.create!(safe_params)
+    render json: post
   end
 
   def update
     post.update_attributes(safe_params)
-    render nothing: true, status: 204
+    render nothing: true
   end
 
   def destroy
     post.destroy
-    render nothing: true, status: 204
+    render nothing: true
   end
 
   private
-    def post_list
-      @post_list ||= TaskList.find(params[:task_list_id])
+    def check_owner
+      permission_denied if current_user != post.owner
     end
 
     def post
-      @post ||= post_list.posts.find(params[:id])
+      @post ||= Post.find(params[:id])
     end
 
     def safe_params
       params.require(:post).permit(:title, :url)
-    end
-
-    def check_owner
-      permission_denied if current_user != post_list.owner
     end
 end
