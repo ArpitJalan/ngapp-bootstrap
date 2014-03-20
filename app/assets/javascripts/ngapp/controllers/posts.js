@@ -1,3 +1,5 @@
+'use strict';
+
 hnApp.controller('PostsCtrl', function($scope, $modalInstance, Post) {
   $scope.posts = [];
   $scope.post = {

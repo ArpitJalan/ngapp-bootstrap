@@ -1,9 +1,13 @@
+'use strict';
+
 // initialize Angular App
 var hnApp = angular.module('hnApp', [
   'ngResource',
   'ngRoute',
-  'ui.bootstrap'
-])
+  'ngAnimate',
+  // 'ui.bootstrap'
+  'mgcrea.ngStrap'
+]);
 
 // making AngularJS work with CSRF protection
 hnApp.config(function($httpProvider) {

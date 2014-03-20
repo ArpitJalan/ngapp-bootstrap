@@ -1,3 +1,5 @@
+'use strict';
+
 hnApp.factory('Post', function($resource, $http) {
   function Post() {
     this.service = $resource('/api/posts/:id', {id: '@id'}, {'update': { method: 'PUT' }});

@@ -15,5 +15,5 @@ Hnapp::Application.routes.draw do
   get '/new' => 'templates#index'
   get '/templates/:path.html' => 'templates#template', :constraints => { :path => /.+/  }
 
-  root :to => "home#index"
+  root :to => 'home#index'
 end
