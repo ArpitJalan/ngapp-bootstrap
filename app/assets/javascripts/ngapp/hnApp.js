@@ -5,8 +5,8 @@ var hnApp = angular.module('hnApp', [
   'ngResource',
   'ngRoute',
   'ngAnimate',
-  // 'ui.bootstrap'
-  'mgcrea.ngStrap'
+  'ui.bootstrap'
+  // 'mgcrea.ngStrap'
 ]);
 
 // making AngularJS work with CSRF protection
@@ -20,6 +20,10 @@ hnApp.config(function ($routeProvider, $locationProvider) {
   $locationProvider.html5Mode(true);
   $routeProvider
     .when('/', {
+        templateUrl: '/templates/dashboard.html',
+        controller: 'DashboardCtrl'
+      })
+    .when('/dashboard', {
         templateUrl: '/templates/dashboard.html',
         controller: 'DashboardCtrl'
       })

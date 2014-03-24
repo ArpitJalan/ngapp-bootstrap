@@ -4,15 +4,15 @@
 </div>
 <div class="modal-body">
   <div class="form-group">
-    <input type="text" placeholder="Title" ng-model="post.title" maxlength="255" id="taskDescription" data-non-blank="" class="form-control input-lg ng-pristine ng-valid" autofocus="autofocus" required="required">
+    <input type="text" placeholder="Title" ng-model="post.title" maxlength="255" id="taskDescription" data-non-blank="" class="form-control input-lg ng-pristine ng-valid" autofocus="autofocus" required>
   </div>
   <div class="form-group">
-    <input type="text" placeholder="URL" ng-model="post.url" maxlength="255" id="taskDescription" data-non-blank="" class="form-control input-lg ng-pristine ng-valid" autofocus="autofocus" required="required">
+    <input type="text" placeholder="URL" ng-model="post.url" maxlength="255" id="taskDescription" data-non-blank="" class="form-control input-lg ng-pristine ng-valid" autofocus="autofocus" required>
   </div>
 </div>
 <div class="modal-footer">
   <button type="submit" class="btn btn-primary">Submit</button>
-  <button type="button" class="btn btn-warning" ng-click="cancel()">Cancel</button>
+  <button type="button" class="btn btn-warning" ng-click="$close()">Cancel</button>
 </div>
 
 </form>

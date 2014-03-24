@@ -11,7 +11,6 @@ hnApp.factory('Post', function($resource, $http) {
     return this.service.remove({id: postId});
   };
   Post.prototype.create = function(attr) {
-    // console.log(attr);
     return this.service.save(attr);
   };
   Post.prototype.update = function(attr) {

@@ -3,14 +3,17 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title><%= content_for?(:title) ? yield(:title) : "HN" %></title>
-
     <%= stylesheet_link_tag    "application" %>
     <%= csrf_meta_tags %>
   </head>
 
   <body>
+
+    <!-- Bootstrap Alert -->
+    <div class="col-md-12" style="position: fixed;">
+      <alert ng-repeat="alert in alerts" type="alert.type" close="alert.close()">{{alert.msg}}</alert>
+    </div>
 
     <!-- Fixed navbar -->
     <div class="navbar navbar-default navbar-fixed-top" role="navigation" ng-controller="NavCtrl">
