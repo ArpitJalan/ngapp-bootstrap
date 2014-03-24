@@ -4,6 +4,7 @@ hnApp.factory('Post', function($resource, $http) {
   function Post() {
     this.service = $resource('/api/posts/:id', {id: '@id'}, {'update': { method: 'PUT' }});
   };
+
   Post.prototype.all = function() {
     return this.service.query();
   };
@@ -16,6 +17,7 @@ hnApp.factory('Post', function($resource, $http) {
   Post.prototype.update = function(attr) {
     return this.service.update(attr);
   };
+
   return new Post;
 });
 

@@ -6,7 +6,7 @@ hnApp.controller('NavCtrl', function($scope, $modal, $rootScope, Post, Alert) {
     title: ""
   };
 
-  var modalInstance;
+  // open modal
   $scope.open = function modal() {
     modalInstance = $modal.open({
       backdrop: 'static',
@@ -15,7 +15,7 @@ hnApp.controller('NavCtrl', function($scope, $modal, $rootScope, Post, Alert) {
     });
   };
 
-  // handle save from pop-up form
+  // handle save from modal form
   $scope.submitPost = function() {
     var attr = {};
     attr = $scope.post;
