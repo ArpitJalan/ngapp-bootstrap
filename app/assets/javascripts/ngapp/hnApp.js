@@ -19,15 +19,15 @@ hnApp.config(function($httpProvider) {
 hnApp.config(function ($routeProvider, $locationProvider) {
   $locationProvider.html5Mode(true);
   $routeProvider
-    .when('/', {
-        templateUrl: '/templates/dashboard.html',
-        controller: 'DashboardCtrl'
-      })
     .when('/dashboard', {
         templateUrl: '/templates/dashboard.html',
         controller: 'DashboardCtrl'
       })
     .when('/new', {
+        templateUrl: '/templates/test.html',
+        controller: 'DashboardCtrl'
+      })
+    .when('/show', {
         templateUrl: '/templates/test.html',
         controller: 'DashboardCtrl'
       })
@@ -40,10 +40,6 @@ hnApp.config(function ($routeProvider, $locationProvider) {
         controller: 'DashboardCtrl'
       })
     .when('/posts', {
-        templateUrl: '/templates/test.html',
-        controller: 'DashboardCtrl'
-      })
-    .when('/comments', {
         templateUrl: '/templates/test.html',
         controller: 'DashboardCtrl'
       })

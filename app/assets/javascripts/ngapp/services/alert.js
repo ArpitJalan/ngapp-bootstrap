@@ -1,27 +1,27 @@
 'use strict';
 
-hnApp.factory('Alert', function($rootScope) {
-  var alertService;
-  $rootScope.alerts = [];
+hnApp.factory('Notification', function($rootScope) {
+  var notificationService;
+  $rootScope.notifications = [];
 
-  return alertService = {
+  return notificationService = {
     add: function(type, msg) {
-      return $rootScope.alerts.push({
+      return $rootScope.notifications.push({
         type: type,
         msg: msg,
         close: function() {
-          return alertService.closeAlert(this);
+          return notificationService.closeNotification(this);
         }
       });
     },
-    closeAlert: function(alert) {
-      return this.closeAlertIdx($rootScope.alerts.indexOf(alert));
+    closeNotification: function(notificaton) {
+      return this.closeNotificationIdx($rootScope.notifications.indexOf(notificaton));
     },
-    closeAlertIdx: function(index) {
-      return $rootScope.alerts.splice(index, 1);
+    closeNotificationIdx: function(index) {
+      return $rootScope.notifications.splice(index, 1);
     },
     clear: function() {
-      $rootScope.alerts = [];
+      $rootScope.notifications = [];
     }
   };
 

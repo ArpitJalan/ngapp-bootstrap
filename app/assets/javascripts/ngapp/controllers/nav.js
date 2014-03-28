@@ -1,6 +1,6 @@
 'use strict';
 
-hnApp.controller('NavCtrl', function($scope, $modal, $rootScope, Post, Alert) {
+hnApp.controller('NavCtrl', function($scope, $modal, $rootScope, Post, Notification) {
   $scope.post = {
     url: "http://",
     title: ""
@@ -25,8 +25,8 @@ hnApp.controller('NavCtrl', function($scope, $modal, $rootScope, Post, Alert) {
     $rootScope.posts.push(newPost);
     // close pop-up
     $scope.$close();
-    // add alert
-    Alert.add("success", "Post submitted successfully!");
+    // add notification
+    Notification.add("success", "Post submitted successfully!");
   };
 
 });
