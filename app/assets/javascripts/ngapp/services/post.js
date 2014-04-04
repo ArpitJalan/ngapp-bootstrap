@@ -2,11 +2,14 @@
 
 hnApp.factory('Post', function($resource, $http) {
   function Post() {
-    this.service = $resource('/api/posts/:id', {id: '@id'}, {'update': { method: 'PUT' }});
+    this.service = $resource('/api/posts/:id', {}, {id: '@id'}, {'update': {method: 'PUT'}}, {'query': {method: 'GET', isArray: false}});
   };
 
   Post.prototype.all = function() {
     return this.service.query();
+  };
+  Post.prototype.find = function(postId) {
+    return this.service.query({id: postId});
   };
   Post.prototype.delete = function(postId) {
     return this.service.remove({id: postId});

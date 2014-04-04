@@ -27,9 +27,6 @@ gem 'bootstrap-sass', '~> 3.1.1'
 # Use Devise for authentication
 gem 'devise'
 
-# Use active_model_serializers for API
-gem 'active_model_serializers'
-
 group :development, :test do
   gem "better_errors"
 end

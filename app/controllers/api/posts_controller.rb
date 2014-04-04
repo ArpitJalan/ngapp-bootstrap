@@ -1,5 +1,6 @@
 class Api::PostsController < Api::BaseController
-  before_action :check_owner, only: [:show, :update, :destroy]
+  # before_action :check_owner, only: [:show, :update, :destroy]
+  before_action only: [:show, :update, :destroy]
 
   def index
     render json: current_user.posts

@@ -13,6 +13,7 @@ Hnapp::Application.routes.draw do
   get '/test' => 'templates#index'
   get '/dashboard' => 'templates#index'
   get '/new' => 'templates#index'
+  get '/posts/:id' => 'templates#index'
   get '/templates/:path.html' => 'templates#template', :constraints => { :path => /.+/  }
 
   root :to => 'home#index'

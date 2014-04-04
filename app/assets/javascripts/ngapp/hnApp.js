@@ -39,9 +39,9 @@ hnApp.config(function ($routeProvider, $locationProvider) {
         templateUrl: '/templates/test.html',
         controller: 'DashboardCtrl'
       })
-    .when('/posts', {
-        templateUrl: '/templates/test.html',
-        controller: 'DashboardCtrl'
+    .when('/posts/:id', {
+        templateUrl: '/templates/post.html',
+        controller: 'PostsCtrl'
       })
     .otherwise({
       templateUrl: '/templates/dashboard.html',
