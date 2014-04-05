@@ -1,13 +1,16 @@
 class Api::PostsController < Api::BaseController
   # before_action :check_owner, only: [:show, :update, :destroy]
   before_action only: [:show, :update, :destroy]
+  respond_to :html, :json
 
   def index
-    render json: current_user.posts
+    # render json: current_user.posts
+    respond_with current_user.posts
   end
 
   def show
-    render json: post
+    # render json: post
+    respond_with post
   end
 
   def create

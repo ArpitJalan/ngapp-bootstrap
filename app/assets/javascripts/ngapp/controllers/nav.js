@@ -8,7 +8,7 @@ hnApp.controller('NavCtrl', function($scope, $modal, $rootScope, Post, Notificat
 
   // open modal
   $scope.open = function modal() {
-    modalInstance = $modal.open({
+    var modalInstance = $modal.open({
       backdrop: 'static',
       templateUrl: '/templates/submit_posts.html',
       controller: 'NavCtrl'
